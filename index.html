@@ -4,9 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Beauty Studio | Naglar, Lashlift & Fransar</title>
+  <title>K&A Beauty | Naglar, Lashlift & Fransar i Uppsala</title>
+  <meta name="description" content="K&A Beauty i Uppsala erbjuder naglar, GelX, gelé, akryl, BIAB, lashlift och ögonfransförlängning. Boka din behandling hos Kristina eller Amelia.">
 
   <style>
+    :root {
+      --cream: #fbf8f5;
+      --beige: #efe4dd;
+      --pink: #e7d2cc;
+      --brown: #3a302d;
+      --soft-brown: #75645f;
+      --white: #ffffff;
+      --line: #e8dfda;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -18,282 +29,548 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #faf7f5;
-      color: #2f2927;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--brown);
       line-height: 1.6;
     }
 
+    /* NAVIGATION */
+
     nav {
-      background: rgba(255,255,255,0.95);
-      padding: 18px 8%;
+      height: 75px;
+      padding: 0 7%;
+      background: rgba(255, 255, 255, 0.96);
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       position: sticky;
       top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #eee7e3;
+      z-index: 1000;
+      border-bottom: 1px solid var(--line);
     }
 
     .logo {
       font-family: Georgia, serif;
-      font-size: 24px;
-      letter-spacing: 2px;
+      font-size: 25px;
+      letter-spacing: 3px;
+      text-decoration: none;
+      color: var(--brown);
     }
 
-    nav a {
-      color: #2f2927;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--brown);
       text-decoration: none;
-      margin-left: 20px;
       font-size: 14px;
     }
 
+    .nav-book {
+      background: var(--brown);
+      color: white !important;
+      padding: 11px 20px;
+      border-radius: 30px;
+    }
+
+    /* HERO */
+
     .hero {
-      min-height: 85vh;
+      min-height: 88vh;
+      background:
+        radial-gradient(circle at 15% 30%, #f1dcd5 0%, transparent 35%),
+        radial-gradient(circle at 85% 70%, #ead8d1 0%, transparent 30%),
+        linear-gradient(135deg, #fffaf7, #f4e8e2);
+
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #f3e5df, #fffaf7);
+      padding: 70px 20px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      color: var(--soft-brown);
+      margin-bottom: 20px;
     }
 
     .hero h1 {
       font-family: Georgia, serif;
-      font-size: clamp(45px, 8vw, 85px);
       font-weight: normal;
-      margin-bottom: 20px;
+      font-size: clamp(55px, 10vw, 105px);
+      line-height: 1;
+      margin-bottom: 25px;
     }
 
     .hero p {
-      max-width: 600px;
-      margin: 0 auto 35px;
+      max-width: 620px;
+      margin: auto;
       font-size: 18px;
-      color: #6b5d58;
+      color: var(--soft-brown);
     }
 
-    .button {
+    .hero-buttons {
+      margin-top: 35px;
+    }
+
+    .btn {
       display: inline-block;
-      padding: 15px 28px;
-      background: #2f2927;
-      color: white;
+      padding: 14px 27px;
+      border-radius: 40px;
       text-decoration: none;
-      border-radius: 30px;
       margin: 5px;
+      transition: 0.2s;
+      border: 1px solid var(--brown);
+      cursor: pointer;
     }
 
-    .button.light {
-      background: transparent;
-      color: #2f2927;
-      border: 1px solid #2f2927;
+    .btn-dark {
+      background: var(--brown);
+      color: white;
     }
+
+    .btn-light {
+      color: var(--brown);
+      background: transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* GENERAL */
 
     section {
-      padding: 90px 8%;
+      padding: 95px 7%;
     }
 
-    .section-title {
+    .section-heading {
       text-align: center;
+      max-width: 700px;
+      margin: 0 auto 55px;
+    }
+
+    .section-heading span {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--soft-brown);
+    }
+
+    .section-heading h2 {
       font-family: Georgia, serif;
-      font-size: 42px;
+      font-size: clamp(38px, 6vw, 55px);
       font-weight: normal;
-      margin-bottom: 15px;
+      margin: 10px 0;
     }
 
-    .section-text {
-      text-align: center;
-      color: #756762;
-      margin-bottom: 50px;
+    .section-heading p {
+      color: var(--soft-brown);
     }
 
-    .services {
+    /* TEAM */
+
+    .team {
+      max-width: 950px;
+      margin: auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 25px;
+    }
+
+    .person {
+      background: white;
+      padding: 45px 30px;
+      text-align: center;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+    }
+
+    .person-icon {
+      width: 75px;
+      height: 75px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .person h3 {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: normal;
+    }
+
+    .person .role {
+      color: var(--soft-brown);
+      margin: 5px 0 20px;
+    }
+
+    /* FEATURED SERVICES */
+
+    .featured {
+      background: var(--beige);
+    }
+
+    .featured-grid {
       max-width: 1100px;
       margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
-    .card {
-      background: white;
+    .featured-card {
+      background: var(--white);
       padding: 35px;
-      border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      border-radius: 20px;
     }
 
-    .card h3 {
+    .featured-card h3 {
       font-family: Georgia, serif;
-      font-size: 26px;
+      font-size: 27px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    .featured-card p {
+      color: var(--soft-brown);
       margin-bottom: 20px;
     }
 
-    .price {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #eee;
-      padding: 13px 0;
+    .big-price {
+      font-family: Georgia, serif;
+      font-size: 28px;
     }
 
-    .about {
-      background: #eee0da;
-      text-align: center;
+    /* PRICE LIST */
+
+    .price-container {
+      max-width: 1050px;
+      margin: auto;
     }
 
-    .about p {
-      max-width: 700px;
-      margin: 20px auto;
+    .price-category {
+      margin-bottom: 55px;
     }
+
+    .price-category h3 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: normal;
+      padding-bottom: 13px;
+      border-bottom: 2px solid var(--brown);
+    }
+
+    .price-row {
+      display: grid;
+      grid-template-columns: 1fr 100px 100px;
+      align-items: center;
+      gap: 15px;
+      padding: 17px 5px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .price-name {
+      font-weight: 500;
+    }
+
+    .time {
+      color: var(--soft-brown);
+      font-size: 14px;
+    }
+
+    .amount {
+      font-weight: bold;
+      text-align: right;
+    }
+
+    /* BOOKING */
 
     .booking {
-      text-align: center;
-      background: #2f2927;
+      background: var(--brown);
       color: white;
+      text-align: center;
     }
 
-    .booking p {
-      margin: 20px auto 30px;
+    .booking h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 6vw, 55px);
+      font-weight: normal;
+    }
+
+    .booking > p {
+      color: #e7deda;
       max-width: 600px;
-      color: #e9dfdb;
+      margin: 15px auto 40px;
     }
 
-    .booking .button {
-      background: white;
-      color: #2f2927;
+    .booking-options {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
+
+    .booking-box {
+      background: rgba(255,255,255,0.08);
+      padding: 35px 25px;
+      border-radius: 20px;
+    }
+
+    .booking-box h3 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: normal;
+    }
+
+    .booking-box p {
+      color: #e7deda;
+      margin: 8px 0 20px;
+    }
+
+    .booking-box .btn {
+      background: white;
+      color: var(--brown);
+      border-color: white;
+    }
+
+    /* CONTACT */
 
     .contact {
       text-align: center;
     }
 
-    .contact-info {
-      margin-top: 30px;
-      line-height: 2.2;
+    .contact-details {
+      max-width: 650px;
+      margin: 30px auto 0;
+      background: white;
+      padding: 40px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
     }
+
+    .contact-details p {
+      margin: 13px 0;
+    }
+
+    .contact-details a {
+      color: var(--brown);
+    }
+
+    /* FOOTER */
 
     footer {
+      background: var(--beige);
+      padding: 35px 20px;
       text-align: center;
-      padding: 30px;
-      background: #eee0da;
-      font-size: 14px;
+      font-size: 13px;
+      color: var(--soft-brown);
     }
 
+    /* MOBILE */
+
     @media (max-width: 800px) {
-      .services {
-        grid-template-columns: 1fr;
+
+      nav {
+        padding: 0 5%;
       }
 
-      nav .links {
+      .nav-links a:not(.nav-book) {
         display: none;
       }
 
+      .logo {
+        font-size: 20px;
+      }
+
       section {
-        padding: 65px 6%;
+        padding: 70px 5%;
+      }
+
+      .team,
+      .featured-grid,
+      .booking-options {
+        grid-template-columns: 1fr;
+      }
+
+      .price-row {
+        grid-template-columns: 1fr auto;
+      }
+
+      .time {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .amount {
+        grid-column: 2;
+        grid-row: 1 / 3;
+      }
+
+      .hero {
+        min-height: 80vh;
       }
     }
   </style>
 </head>
 
+
 <body>
 
-<nav>
-  <div class="logo">BEAUTY STUDIO</div>
+<!-- MENY -->
 
-  <div class="links">
+<nav>
+  <a class="logo" href="#">K&A BEAUTY</a>
+
+  <div class="nav-links">
     <a href="#behandlingar">Behandlingar</a>
-    <a href="#om">Om oss</a>
-    <a href="#boka">Boka</a>
+    <a href="#priser">Priser</a>
     <a href="#kontakt">Kontakt</a>
+    <a class="nav-book" href="#boka">Boka tid</a>
   </div>
 </nav>
 
 
-<div class="hero">
+<!-- STARTSIDA -->
 
-  <div>
-    <h1>Beauty Studio</h1>
+<header class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">Beauty Studio · Uppsala</div>
+
+    <h1>K&A Beauty</h1>
 
     <p>
-      Naglar, fransar och lashlift utförda med precision,
-      kvalitet och känsla för detaljer.
+      Naglar, lashlift och ögonfransförlängning
+      med fokus på kvalitet, precision och detaljer.
     </p>
 
-    <a class="button" href="#boka">Boka tid</a>
-    <a class="button light" href="#behandlingar">Se behandlingar</a>
+    <div class="hero-buttons">
+      <a class="btn btn-dark" href="#boka">Boka tid</a>
+      <a class="btn btn-light" href="#priser">Se priser</a>
+    </div>
+
   </div>
 
-</div>
+</header>
 
 
-<section id="behandlingar">
+<!-- VI SOM JOBBAR HÄR -->
 
-  <h2 class="section-title">Behandlingar & priser</h2>
+<section>
 
-  <p class="section-text">
-    Unna dig en stund för dig själv.
-  </p>
+  <div class="section-heading">
+    <span>K&A Beauty</span>
+    <h2>Välkommen till oss</h2>
+    <p>
+      Välj din behandling och boka direkt med rätt stylist.
+    </p>
+  </div>
 
 
-  <div class="services">
+  <div class="team">
 
-    <div class="card">
+    <div class="person">
 
+      <div class="person-icon">💅</div>
+
+      <h3>Kristina Miller</h3>
+
+      <p class="role">
+        Naglar · GelX · Gelé · Akryl · BIAB
+      </p>
+
+      <a class="btn btn-dark" href="tel:+46705686980">
+        Boka hos Kristina
+      </a>
+
+    </div>
+
+
+    <div class="person">
+
+      <div class="person-icon">✨</div>
+
+      <h3>Amelia Olofsson</h3>
+
+      <p class="role">
+        Lashlift · Ögonfransförlängning
+      </p>
+
+      <a class="btn btn-dark" href="tel:+46703142421">
+        Boka hos Amelia
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BEHANDLINGAR -->
+
+<section class="featured" id="behandlingar">
+
+  <div class="section-heading">
+
+    <span>Behandlingar</span>
+
+    <h2>Beauty is in the details</h2>
+
+    <p>
+      Hitta behandlingen som passar dig.
+    </p>
+
+  </div>
+
+
+  <div class="featured-grid">
+
+    <div class="featured-card">
       <h3>Naglar</h3>
-
-      <div class="price">
-        <span>Nytt set gelé</span>
-        <strong>599 kr</strong>
-      </div>
-
-      <div class="price">
-        <span>Påfyllning</span>
-        <strong>499 kr</strong>
-      </div>
-
-      <div class="price">
-        <span>Gel Polish</span>
-        <strong>399 kr</strong>
-      </div>
-
+      <p>
+        GelX, gelé, akryl och BIAB med allt från
+        naturliga resultat till avancerad design.
+      </p>
+      <span class="big-price">fr. 250 kr</span>
     </div>
 
 
-    <div class="card">
-
+    <div class="featured-card">
       <h3>Lashlift</h3>
-
-      <div class="price">
-        <span>Lashlift</span>
-        <strong>599 kr</strong>
-      </div>
-
-      <div class="price">
-        <span>Lashlift + färg</span>
-        <strong>699 kr</strong>
-      </div>
-
+      <p>
+        Ett lyft för dina naturliga fransar för ett
+        öppnare och mer markerat resultat.
+      </p>
+      <span class="big-price">300 kr</span>
     </div>
 
 
-    <div class="card">
-
-      <h3>Fransförlängning</h3>
-
-      <div class="price">
-        <span>Klassiska fransar</span>
-        <strong>699 kr</strong>
-      </div>
-
-      <div class="price">
-        <span>Hybrid</span>
-        <strong>799 kr</strong>
-      </div>
-
-      <div class="price">
-        <span>Volym</span>
-        <strong>899 kr</strong>
-      </div>
-
+    <div class="featured-card">
+      <h3>Ögonfransförlängning</h3>
+      <p>
+        För dig som vill framhäva ögonen med
+        längre och fylligare fransar.
+      </p>
+      <span class="big-price">700 kr</span>
     </div>
 
   </div>
@@ -301,52 +578,392 @@
 </section>
 
 
-<section class="about" id="om">
+<!-- NAGELPRISER -->
 
-  <h2 class="section-title">Om oss</h2>
+<section id="priser">
 
-  <p>
-    Välkommen till Beauty Studio. Hos oss står kvalitet,
-    noggrannhet och en personlig upplevelse i centrum.
-    Vi erbjuder professionella behandlingar inom naglar,
-    lashlift och ögonfransförlängning.
-  </p>
+  <div class="section-heading">
+    <span>Kristina Miller</span>
+    <h2>Naglar & priser</h2>
+    <p>
+      Bokning av nagelbehandlingar sker via telefon.
+    </p>
+  </div>
+
+
+  <div class="price-container">
+
+
+    <!-- GEL X -->
+
+    <div class="price-category">
+
+      <h3>GelX</h3>
+
+      <div class="price-row">
+        <div class="price-name">Naturell / färg GelX</div>
+        <div class="time">80 min</div>
+        <div class="amount">250 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">French GelX</div>
+        <div class="time">90 min</div>
+        <div class="amount">300 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Simple design GelX</div>
+        <div class="time">100 min</div>
+        <div class="amount">350 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Avancerad design GelX</div>
+        <div class="time">2 timmar</div>
+        <div class="amount">400 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Extra avancerad design GelX</div>
+        <div class="time">2 timmar</div>
+        <div class="amount">450 kr</div>
+      </div>
+
+    </div>
+
+
+    <!-- GELE -->
+
+    <div class="price-category">
+
+      <h3>Gelé</h3>
+
+      <div class="price-row">
+        <div class="price-name">Naturell / färg gelé (nytt sett)</div>
+        <div class="time">80 min</div>
+        <div class="amount">350 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Naturell / färg gelé (påfyllning)</div>
+        <div class="time">80 min</div>
+        <div class="amount">350 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">French gelé (nytt sett)</div>
+        <div class="time">80 min</div>
+        <div class="amount">400 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">French gelé (påfyllning)</div>
+        <div class="time">80 min</div>
+        <div class="amount">400 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Simple design gelé (nytt sett)</div>
+        <div class="time">90 min</div>
+        <div class="amount">450 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Simple design gelé (påfyllning)</div>
+        <div class="time">100 min</div>
+        <div class="amount">400 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Avancerad design gelé (nytt sett)</div>
+        <div class="time">100 min</div>
+        <div class="amount">500 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Avancerad design gelé (påfyllning)</div>
+        <div class="time">100 min</div>
+        <div class="amount">450 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Extra avancerad design (nytt sett)</div>
+        <div class="time">2 timmar</div>
+        <div class="amount">550 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Extra avancerad design gelé (påfyllning)</div>
+        <div class="time">2 timmar</div>
+        <div class="amount">500 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Borttagning gelé</div>
+        <div class="time">30 min</div>
+        <div class="amount">150 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Borttagning i samband med nytt sett</div>
+        <div class="time">30 min</div>
+        <div class="amount">100 kr</div>
+      </div>
+
+    </div>
+
+
+    <!-- AKRYL -->
+
+    <div class="price-category">
+
+      <h3>Akryl</h3>
+
+      <div class="price-row">
+        <div class="price-name">Naturell / färg akryl (nytt sett)</div>
+        <div class="time">80 min</div>
+        <div class="amount">300 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Naturell / färg akryl (påfyllning)</div>
+        <div class="time">80 min</div>
+        <div class="amount">300 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">French akryl (nytt sett)</div>
+        <div class="time">90 min</div>
+        <div class="amount">350 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">French akryl (påfyllning)</div>
+        <div class="time">100 min</div>
+        <div class="amount">350 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Simple design akryl (nytt sett)</div>
+        <div class="time">100 min</div>
+        <div class="amount">400 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Simple design akryl (påfyllning)</div>
+        <div class="time">100 min</div>
+        <div class="amount">400 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Avancerad design akryl (nytt sett)</div>
+        <div class="time">100 min</div>
+        <div class="amount">450 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Avancerad design akryl (påfyllning)</div>
+        <div class="time">2 timmar</div>
+        <div class="amount">400 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Extra avancerad design akryl (nytt sett)</div>
+        <div class="time">2 timmar</div>
+        <div class="amount">500 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Extra avancerad design akryl (påfyllning)</div>
+        <div class="time">2 timmar</div>
+        <div class="amount">450 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Soak off akryl</div>
+        <div class="time">30 min</div>
+        <div class="amount">150 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">Soak off i samband med nytt sett akryl</div>
+        <div class="time">30 min</div>
+        <div class="amount">100 kr</div>
+      </div>
+
+    </div>
+
+
+    <!-- BIAB -->
+
+    <div class="price-category">
+
+      <h3>BIAB</h3>
+
+      <div class="price-row">
+        <div class="price-name">BIAB naturell</div>
+        <div class="time">45 min</div>
+        <div class="amount">250 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">BIAB french</div>
+        <div class="time">1 timme</div>
+        <div class="amount">300 kr</div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-name">BIAB design</div>
+        <div class="time">1 timme</div>
+        <div class="amount">350 kr</div>
+      </div>
+
+    </div>
+
+
+    <div style="text-align:center; margin-top:40px;">
+      <a class="btn btn-dark" href="tel:+46705686980">
+        Ring & boka naglar
+      </a>
+    </div>
+
+  </div>
 
 </section>
 
+
+<!-- FRANSAR -->
+
+<section class="featured">
+
+  <div class="section-heading">
+    <span>Amelia Olofsson</span>
+    <h2>Fransar & Lashlift</h2>
+  </div>
+
+
+  <div class="featured-grid"
+       style="grid-template-columns:repeat(2,1fr); max-width:750px;">
+
+    <div class="featured-card">
+      <h3>Lashlift</h3>
+      <p>
+        Lyft och framhäv dina naturliga fransar.
+      </p>
+      <span class="big-price">300 kr</span>
+    </div>
+
+
+    <div class="featured-card">
+      <h3>Ögonfransförlängning</h3>
+      <p>
+        För ett längre och fylligare resultat.
+      </p>
+      <span class="big-price">700 kr</span>
+    </div>
+
+  </div>
+
+
+  <div style="text-align:center; margin-top:35px;">
+    <a class="btn btn-dark" href="tel:+46703142421">
+      Ring & boka fransar
+    </a>
+  </div>
+
+</section>
+
+
+<!-- BOKNING -->
 
 <section class="booking" id="boka">
 
-  <h2 class="section-title">Boka din behandling</h2>
+  <h2>Boka din behandling</h2>
 
   <p>
-    Redo för din nästa behandling?
-    Klicka nedan för att boka en tid hos oss.
+    Vi tar för närvarande emot bokningar via telefon.
+    Välj behandlingen du är intresserad av så kommer
+    du direkt till rätt person.
   </p>
 
-  <!-- Vi kopplar den här knappen till ert bokningssystem senare -->
-  <a class="button" href="#">Boka tid</a>
+
+  <div class="booking-options">
+
+    <div class="booking-box">
+
+      <h3>Naglar</h3>
+
+      <p>
+        Kristina Miller<br>
+        070-568 69 80
+      </p>
+
+      <a class="btn" href="tel:+46705686980">
+        Ring Kristina
+      </a>
+
+    </div>
+
+
+    <div class="booking-box">
+
+      <h3>Fransar & Lashlift</h3>
+
+      <p>
+        Amelia Olofsson<br>
+        070-314 24 21
+      </p>
+
+      <a class="btn" href="tel:+46703142421">
+        Ring Amelia
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 
+<!-- KONTAKT -->
+
 <section class="contact" id="kontakt">
 
-  <h2 class="section-title">Kontakt</h2>
+  <div class="section-heading">
 
-  <p class="section-text">
-    Har du frågor? Kontakta oss gärna.
-  </p>
+    <span>Hitta hit</span>
 
-  <div class="contact-info">
+    <h2>K&A Beauty</h2>
 
-    <p>📍 Din adress</p>
+    <p>
+      Vi finns i Uppsala. Välkommen till oss!
+    </p>
 
-    <p>☎️ 070-000 00 00</p>
+  </div>
 
-    <p>✉️ kontakt@beautystudio.se</p>
 
-    <p>Instagram: @beautystudio</p>
+  <div class="contact-details">
+
+    <p>
+      <strong>Adress</strong><br>
+      Stångjärnsgatan 8<br>
+      Uppsala
+    </p>
+
+    <p>
+      <strong>Naglar · Kristina</strong><br>
+      <a href="tel:+46705686980">
+        070-568 69 80
+      </a>
+    </p>
+
+    <p>
+      <strong>Fransar & Lashlift · Amelia</strong><br>
+      <a href="tel:+46703142421">
+        070-314 24 21
+      </a>
+    </p>
 
   </div>
 
@@ -354,8 +971,9 @@
 
 
 <footer>
-  © 2026 Beauty Studio · Naglar · Lashlift · Fransar
+  © 2026 K&A Beauty · Stångjärnsgatan 8, Uppsala
 </footer>
+
 
 </body>
 </html>
