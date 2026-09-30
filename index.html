@@ -1,1 +1,361 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Beauty Studio | Naglar, Lashlift & Fransar</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #faf7f5;
+      color: #2f2927;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: rgba(255,255,255,0.95);
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #eee7e3;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: #2f2927;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #f3e5df, #fffaf7);
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(45px, 8vw, 85px);
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 35px;
+      font-size: 18px;
+      color: #6b5d58;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 28px;
+      background: #2f2927;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      margin: 5px;
+    }
+
+    .button.light {
+      background: transparent;
+      color: #2f2927;
+      border: 1px solid #2f2927;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .section-text {
+      text-align: center;
+      color: #756762;
+      margin-bottom: 50px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      padding: 13px 0;
+    }
+
+    .about {
+      background: #eee0da;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    .booking {
+      text-align: center;
+      background: #2f2927;
+      color: white;
+    }
+
+    .booking p {
+      margin: 20px auto 30px;
+      max-width: 600px;
+      color: #e9dfdb;
+    }
+
+    .booking .button {
+      background: white;
+      color: #2f2927;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      line-height: 2.2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #eee0da;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      nav .links {
+        display: none;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">BEAUTY STUDIO</div>
+
+  <div class="links">
+    <a href="#behandlingar">Behandlingar</a>
+    <a href="#om">Om oss</a>
+    <a href="#boka">Boka</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+</nav>
+
+
+<div class="hero">
+
+  <div>
+    <h1>Beauty Studio</h1>
+
+    <p>
+      Naglar, fransar och lashlift utförda med precision,
+      kvalitet och känsla för detaljer.
+    </p>
+
+    <a class="button" href="#boka">Boka tid</a>
+    <a class="button light" href="#behandlingar">Se behandlingar</a>
+  </div>
+
+</div>
+
+
+<section id="behandlingar">
+
+  <h2 class="section-title">Behandlingar & priser</h2>
+
+  <p class="section-text">
+    Unna dig en stund för dig själv.
+  </p>
+
+
+  <div class="services">
+
+    <div class="card">
+
+      <h3>Naglar</h3>
+
+      <div class="price">
+        <span>Nytt set gelé</span>
+        <strong>599 kr</strong>
+      </div>
+
+      <div class="price">
+        <span>Påfyllning</span>
+        <strong>499 kr</strong>
+      </div>
+
+      <div class="price">
+        <span>Gel Polish</span>
+        <strong>399 kr</strong>
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>Lashlift</h3>
+
+      <div class="price">
+        <span>Lashlift</span>
+        <strong>599 kr</strong>
+      </div>
+
+      <div class="price">
+        <span>Lashlift + färg</span>
+        <strong>699 kr</strong>
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>Fransförlängning</h3>
+
+      <div class="price">
+        <span>Klassiska fransar</span>
+        <strong>699 kr</strong>
+      </div>
+
+      <div class="price">
+        <span>Hybrid</span>
+        <strong>799 kr</strong>
+      </div>
+
+      <div class="price">
+        <span>Volym</span>
+        <strong>899 kr</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="about" id="om">
+
+  <h2 class="section-title">Om oss</h2>
+
+  <p>
+    Välkommen till Beauty Studio. Hos oss står kvalitet,
+    noggrannhet och en personlig upplevelse i centrum.
+    Vi erbjuder professionella behandlingar inom naglar,
+    lashlift och ögonfransförlängning.
+  </p>
+
+</section>
+
+
+<section class="booking" id="boka">
+
+  <h2 class="section-title">Boka din behandling</h2>
+
+  <p>
+    Redo för din nästa behandling?
+    Klicka nedan för att boka en tid hos oss.
+  </p>
+
+  <!-- Vi kopplar den här knappen till ert bokningssystem senare -->
+  <a class="button" href="#">Boka tid</a>
+
+</section>
+
+
+<section class="contact" id="kontakt">
+
+  <h2 class="section-title">Kontakt</h2>
+
+  <p class="section-text">
+    Har du frågor? Kontakta oss gärna.
+  </p>
+
+  <div class="contact-info">
+
+    <p>📍 Din adress</p>
+
+    <p>☎️ 070-000 00 00</p>
+
+    <p>✉️ kontakt@beautystudio.se</p>
+
+    <p>Instagram: @beautystudio</p>
+
+  </div>
+
+</section>
+
+
+<footer>
+  © 2026 Beauty Studio · Naglar · Lashlift · Fransar
+</footer>
+
+</body>
+</html>
